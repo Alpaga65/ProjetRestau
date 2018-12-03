@@ -9,5 +9,6 @@
     <Import_RootNamespace>ProjetRestau</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)main.cs" />
   </ItemGroup>
 </Project>
