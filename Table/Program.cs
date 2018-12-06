@@ -28,7 +28,8 @@ namespace Table
             Boolean Bread = false;
         }
 
-        public Table(int IDTable, int rang, int carre, int NumberPerson, int IDEmployee, Boolean AvailableTable, Boolean Clean, Boolean Water, Boolean Bread) {
+        public Table(int IDTable, int rang, int carre, int NumberPerson, int IDEmployee, Boolean AvailableTable, Boolean Clean, Boolean Water, Boolean Bread)
+        {
 
         }
 
