@@ -1,0 +1,5 @@
+Choix des design pattern :
+
+Le premier que nous utiliserons sera le Factory dans le cadre des clients : il nous permettra de générer plusieurs types de clients de façon simple et avec beaucoup de variété dans la génération.
+Ensuite, le deuxième type sera le Singleton dans le cadre des tâches : il nous permettra de limiter l'initialisation d'une classe à un seul objet et de garantir une instance unique dans le cadre de la gestion des tâches.
+Enfin, le dernier type sera le Pool dans le cadre des couverts et matériels : il nous permettra d'améliorer les performances dans la gestion d'objet.

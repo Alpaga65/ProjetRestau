@@ -1,0 +1,139 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: ingredients
+#------------------------------------------------------------
+
+CREATE TABLE ingredients(
+        id_ingredient Int  Auto_increment  NOT NULL ,
+        nom           Varchar (255) NOT NULL ,
+        quantite      Int NOT NULL ,
+        type          Int NOT NULL
+	,CONSTRAINT ingredients_PK PRIMARY KEY (id_ingredient)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: objets
+#------------------------------------------------------------
+
+CREATE TABLE objets(
+        id_objet Int  Auto_increment  NOT NULL ,
+        nom      Varchar (255) NOT NULL ,
+        quantite Int NOT NULL ,
+        type     Int NOT NULL ,
+        etat     Bool NOT NULL
+	,CONSTRAINT objets_PK PRIMARY KEY (id_objet)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: employes
+#------------------------------------------------------------
+
+CREATE TABLE employes(
+        id_employe Int  Auto_increment  NOT NULL ,
+        role       Varchar (255) NOT NULL ,
+        status     Bool NOT NULL ,
+        carre      Int ,
+        rang       Int
+	,CONSTRAINT employes_PK PRIMARY KEY (id_employe)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: tables
+#------------------------------------------------------------
+
+CREATE TABLE tables(
+        id_table   Int  Auto_increment  NOT NULL ,
+        nb_place   Int NOT NULL ,
+        etat       Int NOT NULL ,
+        eau        Bool NOT NULL ,
+        pain       Bool NOT NULL ,
+        id_employe Int NOT NULL
+	,CONSTRAINT tables_PK PRIMARY KEY (id_table)
+
+	,CONSTRAINT tables_employes_FK FOREIGN KEY (id_employe) REFERENCES employes(id_employe)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: clients
+#------------------------------------------------------------
+
+CREATE TABLE clients(
+        id_client       Int  Auto_increment  NOT NULL ,
+        etat_commande   Bool NOT NULL ,
+        etape_repas     Int NOT NULL ,
+        total           Int NOT NULL ,
+        id_table        Int  Auto_increment  NOT NULL ,
+        id_table_tables Int NOT NULL
+	,CONSTRAINT clients_PK PRIMARY KEY (id_client)
+
+	,CONSTRAINT clients_tables_FK FOREIGN KEY (id_table_tables) REFERENCES tables(id_table)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: plats
+#------------------------------------------------------------
+
+CREATE TABLE plats(
+        id_plat     Int  Auto_increment  NOT NULL ,
+        nom         Varchar (255) NOT NULL COMMENT "nom"  ,
+        preparation Time NOT NULL ,
+        cuisson     Time NOT NULL ,
+        ingrediants Varchar (255) NOT NULL ,
+        prix        Int NOT NULL ,
+        type        Int NOT NULL ,
+        id_client   Int NOT NULL
+	,CONSTRAINT plats_PK PRIMARY KEY (id_plat)
+
+	,CONSTRAINT plats_clients_FK FOREIGN KEY (id_client) REFERENCES clients(id_client)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Contenir
+#------------------------------------------------------------
+
+CREATE TABLE Contenir(
+        id_ingredient Int NOT NULL ,
+        id_plat       Int NOT NULL
+	,CONSTRAINT Contenir_PK PRIMARY KEY (id_ingredient,id_plat)
+
+	,CONSTRAINT Contenir_ingredients_FK FOREIGN KEY (id_ingredient) REFERENCES ingredients(id_ingredient)
+	,CONSTRAINT Contenir_plats0_FK FOREIGN KEY (id_plat) REFERENCES plats(id_plat)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Fournir
+#------------------------------------------------------------
+
+CREATE TABLE Fournir(
+        id_plat    Int NOT NULL ,
+        id_employe Int NOT NULL
+	,CONSTRAINT Fournir_PK PRIMARY KEY (id_plat,id_employe)
+
+	,CONSTRAINT Fournir_plats_FK FOREIGN KEY (id_plat) REFERENCES plats(id_plat)
+	,CONSTRAINT Fournir_employes0_FK FOREIGN KEY (id_employe) REFERENCES employes(id_employe)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Composer
+#------------------------------------------------------------
+
+CREATE TABLE Composer(
+        id_objet Int NOT NULL ,
+        id_plat  Int NOT NULL
+	,CONSTRAINT Composer_PK PRIMARY KEY (id_objet,id_plat)
+
+	,CONSTRAINT Composer_objets_FK FOREIGN KEY (id_objet) REFERENCES objets(id_objet)
+	,CONSTRAINT Composer_plats0_FK FOREIGN KEY (id_plat) REFERENCES plats(id_plat)
+)ENGINE=InnoDB;
