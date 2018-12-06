@@ -5,9 +5,27 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ProjetRestau", "ProjetRestau\ProjetRestau.shproj", "{CDED1CAD-E4E5-4565-B2CF-F11FD200483B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Table", "Table\Table.csproj", "{C3B3B214-0151-4EB8-B53C-14A48B764A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitaire", "TestUnitaire\TestUnitaire.csproj", "{F62AB5F7-55B9-4F8E-B2BF-7EB66F1AC809}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ProjetRestau\ProjetRestau.projitems*{cded1cad-e4e5-4565-b2cf-f11fd200483b}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3B3B214-0151-4EB8-B53C-14A48B764A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B3B214-0151-4EB8-B53C-14A48B764A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B3B214-0151-4EB8-B53C-14A48B764A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B3B214-0151-4EB8-B53C-14A48B764A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62AB5F7-55B9-4F8E-B2BF-7EB66F1AC809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62AB5F7-55B9-4F8E-B2BF-7EB66F1AC809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62AB5F7-55B9-4F8E-B2BF-7EB66F1AC809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62AB5F7-55B9-4F8E-B2BF-7EB66F1AC809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
