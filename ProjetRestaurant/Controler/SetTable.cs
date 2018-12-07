@@ -13,15 +13,15 @@ namespace Controler
 		{
 			int NbrPerson = NumberPerson;
 			int Slots = NumberSlot;
-			Boolean Available = true;       //SQL NEEDED
-			Boolean OtherTable = false;
-			if (Available)
+			Boolean Available = false;       //SQL NEEDED
+			Boolean OtherTable = true;
+			if (Available == true)
 			{
 				Console.WriteLine("Bonne table");
 				Console.ReadKey();
 				return true;
 			}
-			else if (OtherTable)     //SQL NEEDED      
+			else if (OtherTable == true)     //SQL NEEDED      
 			{
 				Console.WriteLine("Table de taille supérieur");
 				Console.ReadKey();
@@ -47,7 +47,7 @@ namespace Controler
 
 			if (NumberSlot == 4)
 			{
-				for (int i = 0; i < 10; i++)
+				for (int i = 0; i < 11; i++)
 				{
 					if (Available == true)
 					{
@@ -71,7 +71,7 @@ namespace Controler
 			}
 			else if (NumberSlot == 6)
 			{
-				for (int i = 0; i < 5; i++)
+				for (int i = 0; i < 6; i++)
 				{
 					if (Available == true)
 					{
@@ -81,7 +81,7 @@ namespace Controler
 					}
 					else
 					{
-						System.Threading.Thread.Sleep(250);
+						System.Threading.Thread.Sleep(50);
 						Console.WriteLine("Recherche de table 6");
 						Console.ReadKey();
 
@@ -94,7 +94,7 @@ namespace Controler
 			}
 			else if (NumberSlot == 8)
 			{
-				for (int i = 0; i < 5; i++)
+				for (int i = 0; i < 6; i++)
 				{
 					if (Available == true)
 					{
@@ -104,7 +104,7 @@ namespace Controler
 					}
 					else
 					{
-						System.Threading.Thread.Sleep(250);
+						System.Threading.Thread.Sleep(50);
 						Console.WriteLine("Recherche de table 8");
 						Console.ReadKey();
 
@@ -117,7 +117,10 @@ namespace Controler
 			}
 			else if (NumberSlot == 10)
 			{
-				for (int i = 0; i < 2; i++)
+				
+				for (int i = 0; i < 3
+					
+					; i++)
 				{
 					if (Available == true)
 					{
@@ -127,7 +130,7 @@ namespace Controler
 					}
 					else
 					{
-						System.Threading.Thread.Sleep(250);
+						System.Threading.Thread.Sleep(50);
 						Console.WriteLine("Recherche de table 10");
 						Console.ReadKey();
 					}
