@@ -58,7 +58,7 @@ namespace Projet
             return 0;
         }
 
-        public void SetTable ( int id, int id_groupe )
+       /* public void SetTable ( int id, int id_groupe )
         {
             string requete1 = "UPDATE tables SET situation=1 WHERE id_table=" + id;
             string requete2 = "UPDATE clients SET id_table=" + id + " WHERE id_groupe=" + id_groupe;
@@ -67,6 +67,6 @@ namespace Projet
             cmd.ExecuteNonQuery ( );
             cmd = new MySqlCommand ( requete2, connect );
             cmd.ExecuteNonQuery ( );
-        }
+        }*/
     }
 }
