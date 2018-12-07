@@ -16,7 +16,7 @@ namespace Model
 
 			List<int> numberList = new List<int>();
 			
-			/*while (true)
+			for(int i = 1; i <= 50; i++)
 			{
 				GroupClient(numberList);
 				int groupType = GroupType();
@@ -31,11 +31,13 @@ namespace Model
 					Console.Write("\n");
 				}
 				
-				Thread.Sleep(3000);
-			}*/
+				Thread.Sleep(1000);
+			}
           
 
         }
+
+
 
         public static string RandomType()
         {
@@ -86,14 +88,14 @@ namespace Model
 			
 			numberList.Add(idGroup);
 
-			/*if (number != 0)
+			if (number != 0)
 			{
 				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
 				Console.WriteLine(idGroupName);
 			}else
 			{
 				Console.WriteLine("Pas de groupe");
-			}*/
+			}
 			
 			return idGroup;
 
@@ -205,5 +207,6 @@ namespace Model
 				
 			}
 		}
+
 	}
 }
