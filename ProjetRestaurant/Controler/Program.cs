@@ -6,10 +6,5 @@ using System.Threading.Tasks;
 
 namespace Controler
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+ 
 }
