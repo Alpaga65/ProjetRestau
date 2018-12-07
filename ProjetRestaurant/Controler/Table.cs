@@ -17,21 +17,6 @@ namespace Controler
             SetTable SetTest = new SetTable();
             int Checktest = CheckTest.Check(person);
             Boolean Settest = SetTest.Set(person, Checktest);
-
-
-            
-            
-            if (Settest == true)
-            {
-                Console.WriteLine("Vous allez avoir une table de " + Checktest);
-                Console.WriteLine("Une table est bien dispo");
-                Console.ReadKey();
-            }else if (Settest == false)
-            {
-                Console.WriteLine("DESO BRO");
-                Console.ReadKey();
-            }
-
         }
         public Table()
         {
