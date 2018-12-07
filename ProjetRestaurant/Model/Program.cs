@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Program
+    class Programe
     {
         static void Main(string[] args)
         {
