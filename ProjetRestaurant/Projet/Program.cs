@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace Projet
 {
-    class Program
+    class Programe
     {
-        static void Main(string[] args)
+        static void Main ( string[] args )
         {
+            int t = DBConnector.Instance.GetTable ( 11 );
+           // int s = DBConnector.Instance.SetTable ( t );
+
+
+
+
+            DBConnector.Instance.CloseConnection ( );
+            Console.ReadKey ( );
+
         }
     }
 }
