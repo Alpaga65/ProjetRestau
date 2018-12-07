@@ -11,20 +11,11 @@ namespace Model
     {
         static void Main(string[] args)
         {
+            Log r = new Log();
+            int nombreClient = r.RandomClient();           
             Log write = new Log();
-            write.Logs();
+            write.Logs(nombreClient);
             
-            using (StreamReader reader = new StreamReader(@"C:\Users\sadoun\Desktop\projetc#\DossierLog\log.txt"))
-            {
-                string content = reader.ReadToEnd();
-                reader.Close();
-
-                String b = content;                           
-                Console.WriteLine(b);
-                Console.ReadKey();
-                
-                
-            }
         }
         
     }

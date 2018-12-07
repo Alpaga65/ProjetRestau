@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,25 +10,39 @@ namespace Model
 {
     class Log
     {
-        public string a = "Stplize";
+        public string a = "Nombre de client";
         public string dateString = DateTime.Today.ToShortDateString();
         public string HourString = DateTime.Now.Hour.ToString();
         public string MinuteString = DateTime.Now.Minute.ToString();
         public string SecondString = DateTime.Now.Second.ToString();
-
-        public static int RandomClient()
+        
+        
+        
+        public int RandomClient()
         {
             Random randClient = new Random();
-            int nombreClient = randClient.Next(0, 10);
+            int nombreClient = randClient.Next(0, 11);
             return nombreClient;
-
+            
         }
-        public void Logs()
+
+        public void Logs(int nombreClient)
         {
-            string monFichier = @"C:\Users\sadoun\Desktop\projetc#\DossierLog\log.txt";
-            File.WriteAllText(monFichier, $"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {a}");
+           
+            StreamWriter w = File.AppendText("C:/DossierLog.txt");
+            w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {a} {nombreClient}");
+            w.Close();
+            
+            using (StreamReader reader = new StreamReader(@"C:/DossierLog.txt"))
+            {
+                string content = reader.ReadToEnd();
+                reader.Close();
+                String b = content;                           
+                Console.WriteLine(b);
+                Console.ReadKey();
+                
+            }
 
         }
-
     }
 }
