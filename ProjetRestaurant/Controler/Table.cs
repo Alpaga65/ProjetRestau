@@ -12,13 +12,18 @@ namespace Controler
         private static void Main(string[] args)
         {
             int person = 5;
+			CheckTable CheckTest = new CheckTable();
+			SetTable SetTest = new SetTable();
+			int Checktest = CheckTest.Check(person);
+			Boolean Settest = SetTest.Set(person, Checktest);
+	
 
-            CheckTable CheckTest = new CheckTable();
-            SetTable SetTest = new SetTable();
-            int Checktest = CheckTest.Check(person);
-            Boolean Settest = SetTest.Set(person, Checktest);
+
         }
-        public Table()
+
+	}
+           
+       /* public Table()
         {
             int IDTable = 0;
             int Row = 0;
@@ -32,11 +37,11 @@ namespace Controler
             Boolean Clean = true;
             Boolean Water = false;
             Boolean Bread = false;
-        }
+        }*/
 
 
 
 
 
-    }
 }
+
