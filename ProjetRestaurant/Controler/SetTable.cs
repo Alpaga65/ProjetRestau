@@ -2,7 +2,7 @@
 using Projet;
 
 
-namespace Controler
+namespace command
 {
 	public class SetTable
 	{
