@@ -31,8 +31,6 @@ namespace Controler
 			}
 			else
 			{
-				Console.WriteLine("Pas de place DESO");
-				Console.ReadKey();
 				return false;
 			}
 		}

@@ -18,14 +18,6 @@ namespace Model
 
 
 
-		public int RandomClient()
-		{
-			Random randClient = new Random();
-			int nombreClient = randClient.Next(0, 11);
-			return nombreClient;
-
-		}
-
 		public void Logs(int nombreClient)
 		{
 
