@@ -59,10 +59,10 @@
   <ItemGroup>
     <Compile Include="CheckTable.cs" />
     <Compile Include="GetTable.cs" />
+    <Compile Include="GetCommand.cs" />
     <Compile Include="SetTable.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Thread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -9,28 +9,17 @@ namespace Model
 	class CommandeClient
 	{
 		int numberClient = ClientModel.RandomClient();
-		List<string> entrées = new List<string>
+		public Log toto = new Log();
+		public string Commande()
 		{
-			"Foie gras", "Carottes rapées", "Betterave", "Salade de thon maïs",
-			"Tapas", "Oeuf à la coque", "melon", "Pastèque", "Taboulet", "Carpaccio de saumon"
-		};
-
-		List<string> plats = new List<string>
-		{
-			"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
-			"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur"
-		};
-
-		List<string> desserts = new List<string>
-		{
-			"Glace vanille", "Glace chocolat", "Glace orange", "Glace citron", "Glace pistache", "Glace fraise",
-			"Glace framboise", "Glace fruit de la passion", "Glace ananas", "Glace cerises", "Glace vegan vanille", "Glace mangue"
-		};
-		/*public class Plats
-		{
-			
-		}*/
-
-
-	}
+			var random = new Random();
+			var list = new List<string> {"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
+			"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur" };
+			int number = random.Next(list.Count);
+			string order = "Le client commande :" + list[number] + "";
+			toto.Logs("Client", order);
+			return list[number];
+		}
+	}	
 }
+ 

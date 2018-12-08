@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Model
 {
-	class Log
+	public class Log
 	{
 		//public string a = "Nombre de client";
 		public string dateString = DateTime.Today.ToShortDateString();
@@ -17,7 +17,7 @@ namespace Model
 		public string SecondString = DateTime.Now.Second.ToString();
 
 		/*PAS TOUCHE*/
-		public void Logs(String Message, String Role)
+		public void Logs(String Role, String Message)
 		{
 
 			StreamWriter w = File.AppendText("C:/DossierLog.txt");

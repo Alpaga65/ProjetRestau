@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 /*MAIN OFFICIEL*/
 namespace View
 {
@@ -13,10 +14,10 @@ namespace View
 			
 		}
 
-		public void Client()
+		public async void Client()
 		{
 			ClientModel client = new ClientModel();
-
+			
 		}
 		
 
