@@ -10,27 +10,18 @@ namespace Model
 {
 	class Log
 	{
-		public string a = "Nombre de client";
+		//public string a = "Nombre de client";
 		public string dateString = DateTime.Today.ToShortDateString();
 		public string HourString = DateTime.Now.Hour.ToString();
 		public string MinuteString = DateTime.Now.Minute.ToString();
 		public string SecondString = DateTime.Now.Second.ToString();
 
-
-
-		public int RandomClient()
-		{
-			Random randClient = new Random();
-			int nombreClient = randClient.Next(0, 11);
-			return nombreClient;
-
-		}
-
-		public void Logs(int nombreClient)
+		/*PAS TOUCHE*/
+		public void Logs(String Message, String Role)
 		{
 
 			StreamWriter w = File.AppendText("C:/DossierLog.txt");
-			w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {a} {nombreClient}");
+			w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}");
 			w.Close();
 
 			using (StreamReader reader = new StreamReader(@"C:/DossierLog.txt"))
