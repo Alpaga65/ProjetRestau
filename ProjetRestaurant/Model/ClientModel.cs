@@ -7,35 +7,46 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class ClientModel
+   public static class ClientModel
     {
         static void Main(string[] args)
         {
 
-			CreationGroup();
+			//CreationGroup();
 			
         }
 
-
+		static List<int> numberList = new List<int>();
 		public static void CreationGroup()
 		{
-			List<int> numberList = new List<int>();
-			for (int i = 1; i <= 50; i++)
-			{
-				GroupClient(numberList);
+			
+			//for (int i = 1; i <= 50; i++)
+			//{
+				int number = RandomClient();
+				
+				int idGroup = GroupClient(numberList);
+				if (number != 0)
+				{
+				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
+				Console.WriteLine(idGroupName);
+				}
+				else
+				{
+				Console.WriteLine("Pas de groupe");
+				}
 				GroupType();
 				TextTypeGroupe();
 
-				Thread.Sleep(1000);
-			}
+				//Thread.Sleep(10000);
+			//}
 
 		}
 
 		public static int RandomClient()
 		{
 			Random randClient = new Random();
-			int nombreClient = randClient.Next(0, 11);
-			return nombreClient;
+			int numberClient = randClient.Next(1, 11);
+			return numberClient;
 
 		}
 
@@ -46,7 +57,7 @@ namespace Model
 
 			int idGroup = 1;
 
-			int number = RandomClient();
+			//int number = RandomClient();
 
 
 
@@ -61,7 +72,7 @@ namespace Model
 
 			numberList.Add(idGroup);
 
-			if (number != 0)
+			/*if (number != 0)
 			{
 				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
 				Console.WriteLine(idGroupName);
@@ -69,7 +80,7 @@ namespace Model
 			else
 			{
 				Console.WriteLine("Pas de groupe");
-			}
+			}*/
 
 			return idGroup;
 

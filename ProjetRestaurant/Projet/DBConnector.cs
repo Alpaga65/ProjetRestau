@@ -28,7 +28,7 @@ namespace Projet
                 {
                     connect = new MySqlConnection ( "SERVER=178.62.4.64;DATABASE=Groupe1_Pau;UID=Groupe1Pau;PASSWORD=grp1" );
                     connect.Open ( );
-                    Console.WriteLine ( "sys : INSTANCIATION CONNEXION SQL" );
+                    //Console.WriteLine ( "sys : INSTANCIATION CONNEXION SQL" );
                 }
                 catch ( MySql.Data.MySqlClient.MySqlException ex )
                 {

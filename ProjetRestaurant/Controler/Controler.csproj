@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckTable.cs" />
+    <Compile Include="ClientBdd.cs" />
+    <Compile Include="DBStart.cs" />
     <Compile Include="GetTable.cs" />
     <Compile Include="SetTable.cs" />
     <Compile Include="Table.cs" />
@@ -76,10 +78,6 @@
     <ProjectReference Include="..\Projet\Projet.csproj">
       <Project>{77dcb527-ac8c-4614-bbbf-99b792927cdb}</Project>
       <Name>Projet</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\View\View.csproj">
-      <Project>{4c857e7b-243e-4ab4-8da3-1d8c9947eb53}</Project>
-      <Name>View</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
