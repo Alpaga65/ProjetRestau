@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFull.cs" />
     <Compile Include="CheckTable.cs" />
     <Compile Include="ClientBdd.cs" />
     <Compile Include="DBStart.cs" />
