@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Projet;
 using Model;
+using System.Threading;
+using command;
 
 namespace Controler
 {
 	public class ClientBdd
 	{
 		static DBConnector connexion = new DBConnector();
-
-		public static void clientBdd(int groupType, int idGroup, int numberClient)
+		public CommandeClient client = new CommandeClient();
+		public GetCommand order = new GetCommand();
+		Log log = new Log();
+		public void clientBdd(int groupType, int idGroup, int numberClient)
 		{
-			for(int i = 1; i <= numberClient; i++)
+			Thread.Sleep(1000);
+			for (int i = 1; i <= numberClient; i++)
 			{
-				var random = new Random();
-				var list = new List<string>
-				{
-					"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
-					"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur"
-				};
-				int number = random.Next(list.Count);
-				string order = list[number];
-				//toto.Logs("Client", order);
-				//return list[number];
 
+				string commande = client.commandeclient();
 
-				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '"+ order + "', " + idGroup +")";
+				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '"+ commande + "', " + idGroup +")";
 				MySqlCommand cmd = new MySqlCommand(requete1, connexion.connect);
 				cmd.ExecuteNonQuery();
+				order.GetTable(idGroup);
 			}
 
 			

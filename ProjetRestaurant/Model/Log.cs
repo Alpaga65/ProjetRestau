@@ -20,11 +20,11 @@ namespace Model
 		public void Logs(String Role, String Message)
 		{
 
-			StreamWriter w = File.AppendText("C:/DossierLog.txt");
+			StreamWriter w = File.AppendText("C:/temp/DossierLog.txt");
 			w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}");
 			w.Close();
 
-			using (StreamReader reader = new StreamReader(@"C:/DossierLog.txt"))
+			using (StreamReader reader = new StreamReader(@"C:/temp/DossierLog.txt"))
 			{
 				string content = reader.ReadToEnd();
 				reader.Close();

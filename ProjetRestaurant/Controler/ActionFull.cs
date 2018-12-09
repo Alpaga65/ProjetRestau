@@ -1,4 +1,5 @@
 ﻿using Model;
+using Projet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Controler
 {
 	public class ActionFull
 	{
+		ClientBdd clientbdd = new ClientBdd();
 		public void actionFull()
 		{
 			//DBConnector connexion = new DBConnector();
@@ -22,9 +24,11 @@ namespace Controler
 				int groupType = ClientModel.GroupType();
 				int idGroup = ClientModel.GroupClient(numberList);
 				int numberClient = ClientModel.RandomClient();
-				ClientBdd.clientBdd(groupType, idGroup, numberClient);
-
-				Thread.Sleep(1000);
+				clientbdd.clientBdd(groupType, idGroup, numberClient);
+				
+				
+				
+				
 			}
 		}
 	}

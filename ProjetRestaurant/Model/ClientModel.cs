@@ -8,38 +8,38 @@ using System.Threading.Tasks;
 namespace Model
 {
 
-   public static class ClientModel
+	public class ClientModel
 
-    {
-        static void Main(string[] args)
-        {
+	{
+		void Main(string[] args)
+		{
 
 			//CreationGroup();xvx
-			
-        }
+
+		}
 
 		static List<int> numberList = new List<int>();
 		public static void CreationGroup()
 		{
-			
+
 			//for (int i = 1; i <= 50; i++)
 			//{
-				int number = RandomClient();
-				
-				int idGroup = GroupClient(numberList);
-				if (number != 0)
-				{
+			int number = RandomClient();
+
+			int idGroup = GroupClient(numberList);
+			if (number != 0)
+			{
 				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
 				Console.WriteLine(idGroupName);
-				}
-				else
-				{
+			}
+			else
+			{
 				Console.WriteLine("Pas de groupe");
-				}
-				GroupType();
-				TextTypeGroupe();
+			}
+			GroupType();
+			TextTypeGroupe();
 
-				//Thread.Sleep(10000);
+			//Thread.Sleep(10000);
 			//}
 
 		}
@@ -89,24 +89,24 @@ namespace Model
 
 
 		public static string RandomType()
-        {
-            String[] typepersonne = { "pressé", "normal", "cool" };
-            List<string> randomList = new List<string>();
+		{
+			String[] typepersonne = { "pressé", "normal", "cool" };
+			List<string> randomList = new List<string>();
 
-            int number = RandomClient();
-            Random randType = new Random();
-            for (int i = 1; i <= number; i++)
-            {
-                int selection = randType.Next(0, 3);
-                string type = typepersonne[selection];
-                randomList.Add(type);
-                
-            }
-            string groupeType = string.Join(",", randomList.ToArray());
-            return groupeType;
+			int number = RandomClient();
+			Random randType = new Random();
+			for (int i = 1; i <= number; i++)
+			{
+				int selection = randType.Next(0, 3);
+				string type = typepersonne[selection];
+				randomList.Add(type);
+
+			}
+			string groupeType = string.Join(",", randomList.ToArray());
+			return groupeType;
 
 
-        }
+		}
 
 
 
@@ -124,13 +124,16 @@ namespace Model
 			{
 				groupType = 1;
 
-			}else if (!type1 & type2)
+			}
+			else if (!type1 & type2)
 			{
 				groupType = 2;
-			}else if (!type1 & !type2 & type3)
+			}
+			else if (!type1 & !type2 & type3)
 			{
 				groupType = 3;
-			}else
+			}
+			else
 			{
 				groupType = 4;
 			}
@@ -219,16 +222,15 @@ namespace Model
 
 		public static void TextTypeGroupe()
 		{
+			Log logs = new Log();
 			var type = Factory.Get(GroupType());
 			int number = RandomClient();
-			if (number != 0)
-			{
-				Console.WriteLine("On va se baser sur le temps de la personne " + type.Title + "\n");
-			}
-			else
-			{
-				Console.Write("\n");
-			}
+
+
+			string text = "On va se baser sur le temps de la personne " + type.Title + "\n";
+			logs.Logs("Serveur", text);
+			Console.Write("\n");
+
 		}
 
 	}
