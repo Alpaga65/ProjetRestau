@@ -3,13 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Model;
+using command;
+/*MAIN OFFICIEL*/
 namespace View
 {
-    class Program
+	
+	class Program
     {
-        static void Main(string[] args)
+		GetCommand command = new GetCommand();
+		static void Main(string[] args)
         {
-        }
-    }
+			
+			
+		}
+
+		public async void Client()
+		{
+			ClientModel client = new ClientModel();
+			
+		}
+		
+
+	}
 }

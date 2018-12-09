@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class ClientModel
+    public class ClientModel
     {
 		//List<int> numberList = new List<int>();
         static void Main(string[] args)
@@ -62,7 +62,9 @@ namespace Model
         {
             Random randClient = new Random();
             int nombreClient = randClient.Next(0, 11);
-            return nombreClient;
+			
+
+			return nombreClient;
 
         }
 

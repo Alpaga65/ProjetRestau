@@ -1,4 +1,4 @@
-﻿namespace Controler
+﻿namespace command
 {
     internal class CheckTable
     {
