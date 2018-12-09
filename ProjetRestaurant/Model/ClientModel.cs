@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+
    public static class ClientModel
+
     {
         static void Main(string[] args)
         {
@@ -49,8 +51,6 @@ namespace Model
 			return numberClient;
 
 		}
-
-
 
 		public static int GroupClient(List<int> numberList)
 		{
