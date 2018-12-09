@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckTable.cs" />
+    <Compile Include="ClientBdd.cs" />
+    <Compile Include="DBStart.cs" />
     <Compile Include="GetTable.cs" />
     <Compile Include="GetCommand.cs" />
     <Compile Include="SetTable.cs" />

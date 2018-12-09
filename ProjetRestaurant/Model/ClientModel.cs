@@ -7,37 +7,88 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class ClientModel
+
+   public static class ClientModel
+
     {
-		//List<int> numberList = new List<int>();
         static void Main(string[] args)
         {
 
-
-			List<int> numberList = new List<int>();
+			//CreationGroup();xvx
 			
-			/*while (true)
-			{
-				GroupClient(numberList);
-				int groupType = GroupType();
-				var type = Factory.Get(groupType);
+        }
+
+		static List<int> numberList = new List<int>();
+		public static void CreationGroup()
+		{
+			
+			//for (int i = 1; i <= 50; i++)
+			//{
 				int number = RandomClient();
+				
+				int idGroup = GroupClient(numberList);
 				if (number != 0)
 				{
-					Console.WriteLine("On va se baser sur le temps de la personne " + type.Title + "\n");
+				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
+				Console.WriteLine(idGroupName);
 				}
 				else
 				{
-					Console.Write("\n");
+				Console.WriteLine("Pas de groupe");
 				}
-				
-				Thread.Sleep(3000);
+				GroupType();
+				TextTypeGroupe();
+
+				//Thread.Sleep(10000);
+			//}
+
+		}
+
+		public static int RandomClient()
+		{
+			Random randClient = new Random();
+			int numberClient = randClient.Next(1, 11);
+			return numberClient;
+
+		}
+
+		public static int GroupClient(List<int> numberList)
+		{
+
+			int idGroup = 1;
+
+			//int number = RandomClient();
+
+
+
+			if (numberList.Contains(idGroup))
+			{
+				while (numberList.Contains(idGroup))
+				{
+					idGroup++;
+				}
+
+			}
+
+			numberList.Add(idGroup);
+
+			/*if (number != 0)
+			{
+				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
+				Console.WriteLine(idGroupName);
+			}
+			else
+			{
+				Console.WriteLine("Pas de groupe");
 			}*/
-          
 
-        }
+			return idGroup;
 
-        public static string RandomType()
+		}
+
+
+
+		public static string RandomType()
         {
             String[] typepersonne = { "pressé", "normal", "cool" };
             List<string> randomList = new List<string>();
@@ -52,57 +103,13 @@ namespace Model
                 
             }
             string groupeType = string.Join(",", randomList.ToArray());
-            //Console.WriteLine(groupeType);
             return groupeType;
 
 
         }
 
-        public static int RandomClient()
-        {
-            Random randClient = new Random();
-            int nombreClient = randClient.Next(0, 11);
-			
-
-			return nombreClient;
-
-        }
-
-        public static int GroupClient(List<int> numberList)
-        {
-			
-			int idGroup = 1;
-
-			int number = RandomClient();
-			
-			
-			
-			if (numberList.Contains(idGroup))
-			{
-				while (numberList.Contains(idGroup))
-				{
-					idGroup++;
-				}
-				
-			}
-			
-			numberList.Add(idGroup);
-
-			/*if (number != 0)
-			{
-				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
-				Console.WriteLine(idGroupName);
-			}else
-			{
-				Console.WriteLine("Pas de groupe");
-			}*/
-			
-			return idGroup;
 
 
-
-
-		}
 
 		public static int GroupType()
 		{
@@ -127,9 +134,32 @@ namespace Model
 			{
 				groupType = 4;
 			}
-			
-			//Console.WriteLine(groupType);
 			return groupType;
+		}
+
+
+
+		static class Factory
+		{
+
+			public static Type Get(int groupType)
+			{
+
+				GroupType();
+
+
+				switch (groupType)
+				{
+					case 1: return new Cool();
+					case 2: return new Normal();
+					case 3: return new Pressé();
+					case 4:
+					default: return new Aucun();
+				}
+
+
+
+			}
 		}
 
 		abstract class Type
@@ -186,26 +216,20 @@ namespace Model
 				}
 			}
 		}
-		static class Factory
+
+		public static void TextTypeGroupe()
 		{
-			/// <summary>
-			/// Decides which class to instantiate.
-			/// </summary>
-			public static Type Get(int groupType)
+			var type = Factory.Get(GroupType());
+			int number = RandomClient();
+			if (number != 0)
 			{
-
-				switch (groupType)
-				{
-					case 1 : return new Cool();
-					case 2 : return new Normal();
-					case 3 : return new Pressé();
-					case 4:
-					default: return new Aucun();
-				}
-				
-
-				
+				Console.WriteLine("On va se baser sur le temps de la personne " + type.Title + "\n");
+			}
+			else
+			{
+				Console.Write("\n");
 			}
 		}
+
 	}
 }
