@@ -13,8 +13,8 @@ namespace View
 	
 	class Program
     {
-		ActionFull action = new ActionFull();
-		void Main(string[] args)
+		static ActionFull action = new ActionFull();
+		static void Main(string[] args)
 		{
 			
 			action.actionFull();

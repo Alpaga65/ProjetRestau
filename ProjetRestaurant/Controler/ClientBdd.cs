@@ -17,7 +17,19 @@ namespace Controler
 		{
 			for(int i = 1; i <= numberClient; i++)
 			{
-				string requete1 = "INSERT INTO Clients (type, id_groupe) SELECT " + groupType + ", " + idGroup + ";";
+				var random = new Random();
+				var list = new List<string>
+				{
+					"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
+					"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur"
+				};
+				int number = random.Next(list.Count);
+				string order = list[number];
+				//toto.Logs("Client", order);
+				//return list[number];
+
+
+				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '"+ order + "', " + idGroup +")";
 				MySqlCommand cmd = new MySqlCommand(requete1, connexion.connect);
 				cmd.ExecuteNonQuery();
 			}
