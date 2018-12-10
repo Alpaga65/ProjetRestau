@@ -11,14 +11,14 @@ namespace View
 	class Dialogue
 	{
 		Log message = new Log();
-		public void texte(int id_groupe)
+		public void texte(int id_group)
 		{
 
 			Thread.Sleep(5000);
-			string texte = "Le groupe"+ id_groupe;
+			string texte = "Le groupe"+ id_group;
 			message.Logs(texte, "a fini de manger");
 			Thread.Sleep(5000);
-			string text = "Serveur" + id_groupe;
+			string text = "Serveur" + id_group;
 			message.Logs(text, "nettoie la table");
 		}
 			

@@ -16,8 +16,8 @@ namespace Controler
 			int numberClient = ClientModel.RandomClient();
 			ClientModel.CreationGroup(numberClient);
 			int groupType = ClientModel.GroupType(numberClient);
-			int idGroup = ClientModel.GroupClient(numberList);		
-			clientbdd.clientBdd(groupType, idGroup, numberClient);
+			int id_group = ClientModel.GroupClient(numberList);		
+			clientbdd.clientBdd(groupType, id_group, numberClient);
 
 		}
 	}

@@ -23,10 +23,10 @@ namespace Model
 
 			
 			
-			int idGroup = GroupClient(numberList);
+			int id_group = GroupClient(numberList);
 			if (number != 0)
 			{
-				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
+				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s)";
 				
 				logs.Logs("Client", idGroupName);
 			}
@@ -51,22 +51,22 @@ namespace Model
 		public static int GroupClient(List<int> numberList)
 		{
 
-			int idGroup = 1;
+			int id_group = 1;
 
 			
 
 
 
-			if (numberList.Contains(idGroup))
+			if (numberList.Contains(id_group))
 			{
-				while (numberList.Contains(idGroup))
+				while (numberList.Contains(id_group))
 				{
-					idGroup++;
+					id_group++;
 				}
 
 			}
 
-			numberList.Add(idGroup);
+			numberList.Add(id_group);
 
 			/*if (number != 0)
 			{
@@ -78,7 +78,7 @@ namespace Model
 				Console.WriteLine("Pas de groupe");
 			}*/
 
-			return idGroup;
+			return id_group;
 
 		}
 

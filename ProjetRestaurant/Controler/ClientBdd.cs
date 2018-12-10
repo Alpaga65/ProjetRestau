@@ -19,7 +19,7 @@ namespace Controler
 		public GetCommand order = new GetCommand();
 		
 		Log log = new Log();
-		public void clientBdd(int groupType, int idGroup, int numberClient)
+		public void clientBdd(int groupType, int id_group, int numberClient)
 		{
 			Thread.Sleep(1000);
 
@@ -28,14 +28,14 @@ namespace Controler
 
 				string commande = client.commandeclient();
 
-				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '" + commande + "', " + idGroup + ")";
+				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '" + commande + "', " + id_group + ")";
 				MySqlCommand cmd = new MySqlCommand(requete1, connexion.connect);
 				cmd.ExecuteNonQuery();
 				
 			}
 
 			
-			order.GetTable(idGroup, numberClient);
+			order.GetTable(id_group, numberClient);
 			
 		}
 
