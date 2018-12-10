@@ -65,6 +65,7 @@
     <Compile Include="GetCommand.cs" />
     <Compile Include="Serveur.cs" />
     <Compile Include="SetTable.cs" />
+    <Compile Include="SetTime.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

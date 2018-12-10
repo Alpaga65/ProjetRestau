@@ -17,9 +17,13 @@ namespace Controler
         
         DBConnector connexion = new DBConnector ( );
         Log write = new Log ( );
-        public Serveur ( int id_group )
+
+
+
+		public void Server ( int id_group )
         {
-            string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
+			Thread.Sleep(10000);
+			string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
             MySqlCommand cmd = new MySqlCommand ( requete, connexion.connect );
             MySqlDataReader reader = cmd.ExecuteReader ( );
 

@@ -17,6 +17,7 @@ namespace Controler
 		static DBConnector connexion = new DBConnector();
 		public CommandeClient client = new CommandeClient();
 		public GetCommand order = new GetCommand();
+		
 		Log log = new Log();
 		public void clientBdd(int groupType, int idGroup, int numberClient)
 		{
@@ -33,8 +34,9 @@ namespace Controler
 				
 			}
 
-
+			
 			order.GetTable(idGroup, numberClient);
+			
 		}
 
 		
