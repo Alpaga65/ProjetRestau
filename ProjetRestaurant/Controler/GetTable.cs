@@ -23,6 +23,7 @@ namespace Controler
 			{
 			t = reader.GetInt32(0);
 				reader.Close();
+                Console.Write(t);
 				return t;
 			}
             string message = "Nous avons aucunes tables pour votre groupe";

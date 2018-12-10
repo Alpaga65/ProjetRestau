@@ -16,7 +16,7 @@ namespace Controler
             MySqlCommand cmd = new MySqlCommand ( requete, DBConnector.Instance.Connect );
             MySqlDataReader reader = cmd.ExecuteReader ( );
 
-            texte = "Le Maître de rang à refais la table n°" + table;
+            texte = "Le Maître de rang dresse à nouveau la table n°" + table;
             write.Logs ( texte, "elle est disponible" );
             //Action.actionFull ( );
             Console.ReadKey ( );

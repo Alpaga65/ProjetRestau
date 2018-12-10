@@ -9,25 +9,15 @@ namespace Model
 {
 
 	public class ClientModel
-
 	{
-		void Main(string[] args)
-		{
-
-		}
-
 		 List<int> numberList = new List<int>();
 		public  void CreationGroup(int number)
 		{
 			Log logs = new Log();
-
-			
-			
 			int id_group = GroupClient(numberList);
 			if (number != 0)
 			{
-				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s)";
-				
+				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s) a la table n°" /*+ table*/;
 				logs.Logs("Client", idGroupName);
 			}
 			else
@@ -45,17 +35,11 @@ namespace Model
 			Random randClient = new Random();
 			int numberClient = randClient.Next(1, 11);
 			return numberClient;
-
 		}
 
 		public  int GroupClient(List<int> numberList)
 		{
-
 			int id_group = 1;
-
-			
-
-
 
 			if (numberList.Contains(id_group))
 			{

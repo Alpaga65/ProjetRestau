@@ -21,8 +21,8 @@ namespace Controler
 		Log log = new Log();
 		public void clientBdd(int groupType, int id_group, int numberClient)
 		{
-        int t = gt.getTable ( numberClient );
-        st.setTable ( t, id_group, 1 );
+        int id_table = gt.getTable ( numberClient );
+        st.setTable ( id_table, id_group, 1 );
 		
 			Thread.Sleep(1000);
 
@@ -36,7 +36,7 @@ namespace Controler
 				cmd.ExecuteNonQuery();
 				
 			}
-			order.getCommand(id_group, numberClient);
+			order.getCommand( id_table,id_group, numberClient);
 		}
         
 	}
