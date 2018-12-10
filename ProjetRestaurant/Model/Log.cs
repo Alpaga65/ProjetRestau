@@ -42,12 +42,3 @@ namespace Model
 		}
 	}
 }
- //if (File.Exists (path ) )
- //           {
-
- //               File.Delete(path );
- //           }
- //           using (FileStream fs = File.Create(path ) )
- //           {
-
- //           }
