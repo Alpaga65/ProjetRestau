@@ -14,33 +14,29 @@ namespace Model
 		void Main(string[] args)
 		{
 
-			//CreationGroup();xvx
-
 		}
 
 		static List<int> numberList = new List<int>();
-		public static void CreationGroup()
+		public static void CreationGroup(int number)
 		{
+			Log logs = new Log();
 
-			//for (int i = 1; i <= 50; i++)
-			//{
-			int number = RandomClient();
-
+			
+			
 			int idGroup = GroupClient(numberList);
 			if (number != 0)
 			{
 				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
-				Console.WriteLine(idGroupName);
+				
+				logs.Logs("Client", idGroupName);
 			}
 			else
 			{
 				Console.WriteLine("Pas de groupe");
 			}
-			GroupType();
-			TextTypeGroupe();
+			GroupType(number);
+			TextTypeGroupe(number);
 
-			//Thread.Sleep(10000);
-			//}
 
 		}
 
@@ -57,7 +53,7 @@ namespace Model
 
 			int idGroup = 1;
 
-			//int number = RandomClient();
+			
 
 
 
@@ -88,12 +84,12 @@ namespace Model
 
 
 
-		public static string RandomType()
+		public static string RandomType(int number)
 		{
 			String[] typepersonne = { "pressé", "normal", "cool" };
 			List<string> randomList = new List<string>();
 
-			int number = RandomClient();
+			
 			Random randType = new Random();
 			for (int i = 1; i <= number; i++)
 			{
@@ -111,9 +107,9 @@ namespace Model
 
 
 
-		public static int GroupType()
+		public static int GroupType(int number)
 		{
-			string listType = RandomType();
+			string listType = RandomType(number);
 			bool type1 = listType.Contains("cool");
 			bool type2 = listType.Contains("normal");
 			bool type3 = listType.Contains("pressé");
@@ -145,10 +141,10 @@ namespace Model
 		static class Factory
 		{
 
-			public static Type Get(int groupType)
+			public static Type Get(int groupType, int number)
 			{
 
-				GroupType();
+				GroupType(number);
 
 
 				switch (groupType)
@@ -220,11 +216,11 @@ namespace Model
 			}
 		}
 
-		public static void TextTypeGroupe()
+		public static void TextTypeGroupe(int number)
 		{
 			Log logs = new Log();
-			var type = Factory.Get(GroupType());
-			int number = RandomClient();
+			var type = Factory.Get(GroupType(number), number);
+			//int number = RandomClient();
 
 
 			/*string text = "On va se baser sur le temps de la personne " + type.Title + "\n";

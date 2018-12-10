@@ -16,7 +16,7 @@ namespace View
 		static ActionFull action = new ActionFull();
 		static void Main(string[] args)
 		{
-			
+			Thread.Sleep(1000);
 			action.actionFull();
 
 		}
