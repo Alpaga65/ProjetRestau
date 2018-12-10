@@ -13,10 +13,11 @@ namespace Controler
 			DBStart.dbStart();
 			List<int> numberList = new List<int>();
 
-			int numberClient = ClientModel.RandomClient();
-			ClientModel.CreationGroup(numberClient);
-			int groupType = ClientModel.GroupType(numberClient);
-			int id_group = ClientModel.GroupClient(numberList);		
+			ClientModel clientModel = new ClientModel();
+			int numberClient = clientModel.RandomClient();
+			clientModel.CreationGroup(numberClient);
+			int groupType = clientModel.GroupType(numberClient);
+			int id_group = clientModel.GroupClient(numberList);		
 			clientbdd.clientBdd(groupType, id_group, numberClient);
 
 		}
