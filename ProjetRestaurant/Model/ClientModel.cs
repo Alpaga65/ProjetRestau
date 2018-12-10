@@ -17,7 +17,7 @@ namespace Model
 			int id_group = GroupClient(numberList);
 			if (number != 0)
 			{
-				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s) a la table n°" /*+ table*/;
+				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s) ";
 				logs.Logs("Client", idGroupName);
 			}
 			else

@@ -11,11 +11,11 @@ namespace Controler
         public void getClean ( int table, int id_group )
         {
             Thread.Sleep ( 5000 );
-            string texte = " Le groupe " + id_group;
+            string texte = "Le groupe " + id_group;
             write.Logs ( texte, " a fini de manger " );
 
             Thread.Sleep ( 1000 );
-            string text = " Serveur " + id_group;
+            string text = "Serveur " + id_group;
             write.Logs ( text, " débarasse la table " );
 
             string requete1 = "UPDATE tables SET situation=2 WHERE id_groupe=" + id_group;

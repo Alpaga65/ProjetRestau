@@ -30,7 +30,7 @@ namespace Controler
             while ( reader.Read ( ) )
             {
                 string plat = reader.GetString ( "id_plat" );
-                string message = " Apporte : " + plat + " au groupe" + id_group;
+                string message = "Apporte - " + plat + " au groupe" + id_group;
                 write.Logs ( "Serveur", message );
             }
             reader.Close ( );
