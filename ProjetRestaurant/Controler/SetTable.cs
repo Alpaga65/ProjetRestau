@@ -11,7 +11,7 @@ namespace command
 		{
 
 			
-			string requete1 = "UPDATE tables SET situation= "+ situation + " WHERE id_table=" + table;
+			string requete1 = "UPDATE tables SET situation= "+ situation + ", id_groupe="+ id_groupe +" WHERE id_table=" + table;
 			string requete2 = "UPDATE Clients SET id_table=" + table + " WHERE id_groupe=" + id_groupe;
 			
 			MySqlCommand cmd = new MySqlCommand(requete1, connexion.connect);
