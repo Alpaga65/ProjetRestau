@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using Projet;
 using Model;
 using System.Threading;
 using command;
@@ -14,13 +13,16 @@ namespace Controler
 	public class ClientBdd
 	{
 
-		static DBConnector connexion = new DBConnector();
+		DBConnector connexion = new DBConnector();
 		public CommandeClient client = new CommandeClient();
 		public GetCommand order = new GetCommand();
 		
 		Log log = new Log();
 		public void clientBdd(int groupType, int id_group, int numberClient)
 		{
+        //int t = connexion.Instance.GetTable ( numberClient );
+        //int s = connexion.Instance.SetTable ( t, id_group, 1 );
+		
 			Thread.Sleep(1000);
 
 			for(int i = 1; i <= numberClient; i++)
@@ -33,12 +35,8 @@ namespace Controler
 				cmd.ExecuteNonQuery();
 				
 			}
-
-			
-			order.GetTable(id_group, numberClient);
-			
+			order.getCommand(id_group, numberClient);
 		}
-
-		
+        
 	}
 }

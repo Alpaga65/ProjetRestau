@@ -1,7 +1,7 @@
 ﻿
 using Model;
 using MySql.Data.MySqlClient;
-using Projet;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +32,6 @@ namespace Controler
                 string plat = reader.GetString ( "id_plat" );
                 string message = " Apporte" + plat + " au groupe" + id_group;
                 write.Logs ( "Serveur", message );
-
-
             }
             reader.Close ( );
 

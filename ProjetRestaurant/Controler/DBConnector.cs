@@ -9,8 +9,7 @@ namespace Controler
 
         public MySqlConnection connect;
         public static DBConnector instance;
-
-        public static DBConnector Instance 
+        public static DBConnector Instance
         {
             get
             {
@@ -21,7 +20,6 @@ namespace Controler
                 return instance;
             }
         }
-
         public DBConnector ( )
         {
             if ( connect == null )
@@ -30,7 +28,7 @@ namespace Controler
                 {
                     connect = new MySqlConnection ( "SERVER=178.62.4.64;DATABASE=Groupe1_Pau;UID=Groupe1Pau;PASSWORD=grp1" );
                     connect.Open ( );
-
+                    Console.WriteLine ( "sys : INSTANCIATION CONNEXION SQL" );
                 }
                 catch ( MySql.Data.MySqlClient.MySqlException ex )
                 {
