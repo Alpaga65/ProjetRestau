@@ -8,7 +8,7 @@ namespace Controler
 {
 	public class GetCommand
 	{
-		DBConnector connexion = new DBConnector();
+		
 		Log write = new Log();
 		public Serveur service = new Serveur();
 
@@ -16,7 +16,7 @@ namespace Controler
 		{
 			Thread.Sleep(5000);
 			string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
-			MySqlCommand cmd = new MySqlCommand(requete, connexion.connect);
+			MySqlCommand cmd = new MySqlCommand(requete, DBConnector.Instance.Connect );
 			MySqlDataReader reader = cmd.ExecuteReader();
 
 

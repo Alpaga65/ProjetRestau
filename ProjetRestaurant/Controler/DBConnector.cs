@@ -7,8 +7,9 @@ namespace Controler
     public class DBConnector
     {
 
-        public MySqlConnection connect;
-        public static DBConnector instance;
+        private MySqlConnection connect;
+        private static DBConnector instance;
+
         public static DBConnector Instance
         {
             get
@@ -20,7 +21,7 @@ namespace Controler
                 return instance;
             }
         }
-        public DBConnector ( )
+        private  DBConnector ( )
         {
             if ( connect == null )
             {
@@ -40,6 +41,11 @@ namespace Controler
         public void CloseConnection ( )
         {
             connect.Close ( );
+        }
+
+        public MySqlConnection Connect
+        {
+            get { return connect;  }
         }
     }
 }

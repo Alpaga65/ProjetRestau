@@ -13,7 +13,7 @@ namespace Controler
 	public class ClientBdd
 	{
 
-		DBConnector connexion = new DBConnector();
+		
 		public CommandeClient client = new CommandeClient();
 		public GetCommand order = new GetCommand();
 		
@@ -31,7 +31,7 @@ namespace Controler
 				string commande = client.commandeclient();
 
 				string requete1 = "INSERT INTO Clients (type, id_plat, id_groupe) VALUES (" + groupType + ", '" + commande + "', " + id_group + ")";
-				MySqlCommand cmd = new MySqlCommand(requete1, connexion.connect);
+				MySqlCommand cmd = new MySqlCommand(requete1, DBConnector.Instance.Connect );
 				cmd.ExecuteNonQuery();
 				
 			}

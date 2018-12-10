@@ -11,13 +11,13 @@ namespace Controler
 {
 	public class GetTable
 	{
-        DBConnector connexion = new DBConnector ( );
+        
         Log write = new Log();
 		public int getTable(int capacite)
 		{
             int t = 0;
 			string requete = "SELECT id_table FROM tables WHERE situation=0 AND capacite>=" + capacite;
-			MySqlCommand cmd = new MySqlCommand(requete, connexion.connect);
+			MySqlCommand cmd = new MySqlCommand(requete, DBConnector.Instance.Connect );
 			MySqlDataReader reader = cmd.ExecuteReader();
 			if (reader.Read())
 			{
