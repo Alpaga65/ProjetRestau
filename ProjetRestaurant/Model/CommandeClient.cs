@@ -8,7 +8,6 @@ namespace Model
 {
 	public class CommandeClient
 	{
-		public int numberClient = ClientModel.RandomClient();
 		public Log toto = new Log();
 		public string commandeclient()
 		{
@@ -18,8 +17,6 @@ namespace Model
 			"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur" };
 			int number = random.Next(list.Count);
 			string text = list[number];
-			string order = "Le groupe est en train de commander";
-			toto.Logs("Client", order);
 			return text;
 		}
 	}	
