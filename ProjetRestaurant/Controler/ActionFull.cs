@@ -1,11 +1,6 @@
 ﻿using Model;
-using Projet;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace Controler
 {
@@ -25,10 +20,7 @@ namespace Controler
 				int idGroup = ClientModel.GroupClient(numberList);
 				int numberClient = ClientModel.RandomClient();
 				clientbdd.clientBdd(groupType, idGroup, numberClient);
-				
-				
-				
-				
+			
 			}
 		}
 	}

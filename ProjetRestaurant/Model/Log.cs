@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Threading;
 
 namespace Model
 {
@@ -30,7 +31,8 @@ namespace Model
 				reader.Close();
 				String b = content;
 				Console.WriteLine(b);
-				Console.ReadKey();
+				//Console.ReadKey();
+				Thread.Sleep(250);
 
 			}
 

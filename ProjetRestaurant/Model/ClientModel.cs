@@ -227,9 +227,9 @@ namespace Model
 			int number = RandomClient();
 
 
-			string text = "On va se baser sur le temps de la personne " + type.Title + "\n";
+			/*string text = "On va se baser sur le temps de la personne " + type.Title + "\n";
 			logs.Logs("Serveur", text);
-			Console.Write("\n");
+			Console.Write("\n");*/
 
 		}
 
