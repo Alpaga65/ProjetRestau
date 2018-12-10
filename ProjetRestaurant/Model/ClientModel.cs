@@ -16,8 +16,8 @@ namespace Model
 
 		}
 
-		static List<int> numberList = new List<int>();
-		public static void CreationGroup(int number)
+		 List<int> numberList = new List<int>();
+		public  void CreationGroup(int number)
 		{
 			Log logs = new Log();
 
@@ -40,7 +40,7 @@ namespace Model
 
 		}
 
-		public static int RandomClient()
+		public  int RandomClient()
 		{
 			Random randClient = new Random();
 			int numberClient = randClient.Next(1, 11);
@@ -48,7 +48,7 @@ namespace Model
 
 		}
 
-		public static int GroupClient(List<int> numberList)
+		public  int GroupClient(List<int> numberList)
 		{
 
 			int id_group = 1;
@@ -84,7 +84,7 @@ namespace Model
 
 
 
-		public static string RandomType(int number)
+		public  string RandomType(int number)
 		{
 			String[] typepersonne = { "pressé", "normal", "cool" };
 			List<string> randomList = new List<string>();
@@ -107,7 +107,7 @@ namespace Model
 
 
 
-		public static int GroupType(int number)
+		public  int GroupType(int number)
 		{
 			string listType = RandomType(number);
 			bool type1 = listType.Contains("cool");
@@ -143,8 +143,8 @@ namespace Model
 
 			public static Type Get(int groupType, int number)
 			{
-
-				GroupType(number);
+				ClientModel clientModel = new ClientModel();
+				clientModel.GroupType(number);
 
 
 				switch (groupType)
@@ -216,7 +216,7 @@ namespace Model
 			}
 		}
 
-		public static void TextTypeGroupe(int number)
+		public  void TextTypeGroupe(int number)
 		{
 			Log logs = new Log();
 			var type = Factory.Get(GroupType(number), number);
