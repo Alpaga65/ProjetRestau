@@ -2,14 +2,15 @@
 using System.Data.Common;
 using MySql.Data.MySqlClient;
 
-namespace Projet
+namespace Controler
 {
     public class DBConnector
     {
 
         public MySqlConnection connect;
         public static DBConnector instance;
-        public static DBConnector Instance
+
+        public static DBConnector Instance 
         {
             get
             {
@@ -20,6 +21,7 @@ namespace Projet
                 return instance;
             }
         }
+
         public DBConnector ( )
         {
             if ( connect == null )
