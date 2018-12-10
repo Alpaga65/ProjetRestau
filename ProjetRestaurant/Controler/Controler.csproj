@@ -63,6 +63,7 @@
     <Compile Include="DBStart.cs" />
     <Compile Include="GetTable.cs" />
     <Compile Include="GetCommand.cs" />
+    <Compile Include="Serveur.cs" />
     <Compile Include="SetTable.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
