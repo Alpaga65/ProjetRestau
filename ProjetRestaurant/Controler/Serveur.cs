@@ -14,6 +14,7 @@ namespace Controler
 {
     public class Serveur
     {
+        
         DBConnector connexion = new DBConnector ( );
         Log write = new Log ( );
         public Serveur ( int id_group )
