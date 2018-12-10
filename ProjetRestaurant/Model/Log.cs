@@ -11,31 +11,43 @@ namespace Model
 {
 	public class Log
 	{
-		//public string a = "Nombre de client";
-		public string dateString = DateTime.Today.ToShortDateString();
-		public string HourString = DateTime.Now.Hour.ToString();
+        //public string a = "Nombre de client";
+        public string dateString = DateTime.Today.ToShortDateString ( );
+        public string HourString = DateTime.Now.Hour.ToString();
 		public string MinuteString = DateTime.Now.Minute.ToString();
 		public string SecondString = DateTime.Now.Second.ToString();
 
 		/*PAS TOUCHE*/
 		public void Logs(String Role, String Message)
 		{
+            
+            StreamWriter w = File.AppendText("C:/temp/DossierLog.txt");
+            w.WriteLine ( $"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}" );
+            w.Close ( );
 
-			StreamWriter w = File.AppendText("C:/temp/DossierLog.txt");
-			w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}");
-			w.Close();
-
-			using (StreamReader reader = new StreamReader(@"C:/temp/DossierLog.txt"))
+            using (StreamReader reader = new StreamReader(@"C:/temp/DossierLog.txt"))
 			{
 				string content = reader.ReadToEnd();
 				reader.Close();
 				String b = content;
 				Console.WriteLine(b);
-				//Console.ReadKey();
 				Thread.Sleep(250);
 
 			}
 
+            /*
+             * w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}");
+			w.Close();
+            */
 		}
 	}
 }
+ //if (File.Exists (path ) )
+ //           {
+
+ //               File.Delete(path );
+ //           }
+ //           using (FileStream fs = File.Create(path ) )
+ //           {
+
+ //           }

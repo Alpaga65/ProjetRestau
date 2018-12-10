@@ -12,7 +12,7 @@ namespace Controler
 	public class GetTable
 	{
         
-        Log write = new Log();
+        Logs write = new Log();
 		public int getTable(int capacite)
 		{
             int t = 0;

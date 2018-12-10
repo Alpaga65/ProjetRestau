@@ -13,15 +13,16 @@ namespace Controler
 	public class ClientBdd
 	{
 
-		
-		public CommandeClient client = new CommandeClient();
+		public GetTable gt = new GetTable ( );
+        public SetTable st = new SetTable ( );
+        public CommandeClient client = new CommandeClient();
 		public GetCommand order = new GetCommand();
 		
 		Log log = new Log();
 		public void clientBdd(int groupType, int id_group, int numberClient)
 		{
-        //int t = connexion.Instance.GetTable ( numberClient );
-        //int s = connexion.Instance.SetTable ( t, id_group, 1 );
+        int t = gt.getTable ( numberClient );
+        st.setTable ( t, id_group, 1 );
 		
 			Thread.Sleep(1000);
 

@@ -65,6 +65,8 @@
     <Compile Include="GetTable.cs" />
     <Compile Include="GetCommand.cs" />
     <Compile Include="Serveur.cs" />
+    <Compile Include="SetAvailable.cs" />
+    <Compile Include="GetClean.cs" />
     <Compile Include="SetTable.cs" />
     <Compile Include="SetTime.cs" />
     <Compile Include="Table.cs" />

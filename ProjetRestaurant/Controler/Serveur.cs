@@ -17,10 +17,10 @@ namespace Controler
         
        
         Log write = new Log ( );
+        GetClean gc = new GetClean ( );
 
 
-
-		public void Server ( int id_group )
+		public void Server ( int table , int id_group )
         {
 			Thread.Sleep(10000);
 			string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
@@ -30,11 +30,12 @@ namespace Controler
             while ( reader.Read ( ) )
             {
                 string plat = reader.GetString ( "id_plat" );
-                string message = " Apporte" + plat + " au groupe" + id_group;
+                string message = " Apporte : " + plat + " au groupe" + id_group;
                 write.Logs ( "Serveur", message );
             }
             reader.Close ( );
-
+            gc.getClean (table , id_group );
         }
+        
     }
 }

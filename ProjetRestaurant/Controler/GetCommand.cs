@@ -8,7 +8,7 @@ namespace Controler
 {
 	public class GetCommand
 	{
-		
+        GetTable table = new GetTable ( );
 		Log write = new Log();
 		public Serveur service = new Serveur();
 
@@ -24,14 +24,14 @@ namespace Controler
 			{
 
 				string test = reader.GetString("id_plat");
-				string message = "Un client du groupe n°" + id_group +" a choisi son menu" + test;
+				string message = "Un client du groupe n°" + id_group +" commande - " + test;
 
 				write.Logs("Maitre de rang", message);
 
 			}
 			
 			reader.Close();
-			service.Server(id_group);
+			service.Server(table.getTable( numberClient), id_group);
 		}
 	}
 }
