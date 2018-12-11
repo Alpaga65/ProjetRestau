@@ -1,5 +1,4 @@
-﻿using Controler;
-using Model;
+﻿using Model;
 using MySql.Data.MySqlClient;
 
 using System.Threading;

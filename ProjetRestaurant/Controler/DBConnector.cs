@@ -14,38 +14,38 @@ namespace Controler
         {
             get
             {
-                if ( instance == null )
+                if (instance == null)
                 {
-                    instance = new DBConnector ( );
+                    instance = new DBConnector();
                 }
                 return instance;
             }
         }
-        private  DBConnector ( )
+        private DBConnector()
         {
-            if ( connect == null )
+            if (connect == null)
             {
                 try
                 {
-                    connect = new MySqlConnection ( "SERVER=178.62.4.64;DATABASE=Groupe1_Pau;UID=Groupe1Pau;PASSWORD=grp1" );
-                    connect.Open ( );
-                    Console.WriteLine ( "sys : INSTANCIATION CONNEXION SQL" );
+                    connect = new MySqlConnection("SERVER=178.62.4.64;DATABASE=Groupe1_Pau;UID=Groupe1Pau;PASSWORD=grp1");
+                    connect.Open();
+                    Console.WriteLine("sys : INSTANCIATION CONNEXION SQL");
                 }
-                catch ( MySql.Data.MySqlClient.MySqlException ex )
+                catch (MySql.Data.MySqlClient.MySqlException ex)
                 {
-                    Console.WriteLine ( ex.Message );
-                    Console.ReadKey ( );
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
                 }
             }
         }
-        public void CloseConnection ( )
+        public void CloseConnection()
         {
-            connect.Close ( );
+            connect.Close();
         }
 
         public MySqlConnection Connect
         {
-            get { return connect;  }
+            get { return connect; }
         }
     }
 }

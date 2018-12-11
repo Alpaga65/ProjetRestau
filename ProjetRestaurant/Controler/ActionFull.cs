@@ -1,26 +1,25 @@
-﻿using Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Model;
+
 
 
 namespace Controler
 {
-    public class ActionFull
-    {
-        ClientBdd clientbdd = new ClientBdd ( );
-        LogStart ls = new LogStart ( );
-        public void actionFull ( )
-        {
-            ls.logStart ( );
-            DBStart.dbStart ( );
-            List<int> numberList = new List<int> ( );
+	public class ActionFull
+	{
+        //Instanciation des objets
+		ClientBdd clientbdd = new ClientBdd();
+        ClientModel clientModel = new ClientModel();
+        List<int> numberList = new List<int>();
 
-            ClientModel clientModel = new ClientModel ( );
-            int numberClient = clientModel.RandomClient ( );
-            clientModel.CreationGroup ( numberClient );
-            int groupType = clientModel.GroupType ( numberClient );
-            int id_group = clientModel.GroupClient ( numberList );
-            clientbdd.clientBdd ( groupType, id_group, numberClient );
-
-        }
-    }
+        //Lancement de l'application
+        public void actionFull()
+		{
+			int numberClient = clientModel.RandomClient();
+			clientModel.CreationGroup(numberClient);
+			int groupType = clientModel.GroupType(numberClient);
+			int id_group = clientModel.GroupClient(numberList);
+			clientbdd.clientBdd(groupType, id_group, numberClient);
+		}
+	}
 }

@@ -10,7 +10,7 @@ namespace ModelTest
 	{
 		
 		[TestMethod]
-		public void RandomClientTest() //Test si le random est entre 1 et 10
+		public void RandomClientTest() //Test si le nombre de client est entre 1 et 10
 		{
 			ClientModel clientModel = new ClientModel();
 			int numberClient = clientModel.RandomClient();
@@ -96,5 +96,7 @@ namespace ModelTest
 
 			Assert.IsNotNull(type);
 		}
+
+
 	}
 }

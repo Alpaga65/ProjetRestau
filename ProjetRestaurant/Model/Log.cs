@@ -19,8 +19,7 @@ namespace Model
 
 		/*PAS TOUCHE*/
 		public void Logs(String Role, String Message)
-		{
-            
+		{         
             StreamWriter w = File.AppendText("C:/temp/DossierLog.txt");
             w.WriteLine ( $"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}" );
             w.Close ( );
@@ -34,11 +33,6 @@ namespace Model
 				Thread.Sleep(250);
 
 			}
-
-            /*
-             * w.WriteLine($"{dateString} {HourString}{":"}{MinuteString}{":"}{SecondString} {":"} {Role} {":"} {Message}");
-			w.Close();
-            */
 		}
 	}
 }

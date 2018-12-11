@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controler
 {
-    class LogStart
+    public class LogStart
     {
 
         public void logStart ( )

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Model;
 using System.Threading;
-using command;
 
 namespace Controler
 {
