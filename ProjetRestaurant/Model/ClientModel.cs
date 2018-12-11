@@ -52,16 +52,6 @@ namespace Model
 
 			numberList.Add(id_group);
 
-			/*if (number != 0)
-			{
-				string idGroupName = "Groupe " + idGroup + " de " + number + " personne(s)";
-				Console.WriteLine(idGroupName);
-			}
-			else
-			{
-				Console.WriteLine("Pas de groupe");
-			}*/
-
 			return id_group;
 
 		}
@@ -91,7 +81,7 @@ namespace Model
 
 
 
-		public  int GroupType(int number)
+		public int GroupType(int number)
 		{
 			string listType = RandomType(number);
 			bool type1 = listType.Contains("cool");
@@ -122,7 +112,7 @@ namespace Model
 
 
 
-		static class Factory
+		public static class Factory
 		{
 
 			public static Type Get(int groupType, int number)
@@ -145,7 +135,7 @@ namespace Model
 			}
 		}
 
-		abstract class Type
+		public abstract class Type
 		{
 			public abstract string Title
 			{
@@ -200,11 +190,12 @@ namespace Model
 			}
 		}
 
-		public  void TextTypeGroupe(int number)
+		public void TextTypeGroupe(int number)
 		{
+			
 			Log logs = new Log();
 			var type = Factory.Get(GroupType(number), number);
-			//int number = RandomClient();
+			
 
 
 			/*string text = "On va se baser sur le temps de la personne " + type.Title + "\n";
