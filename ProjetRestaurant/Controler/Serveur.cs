@@ -14,12 +14,11 @@ namespace Controler
 {
     public class Serveur
     {
-        
-       
-        Log write = new Log ( );
-        GetClean gc = new GetClean ( );
+        //Instanciation des objets
+        public Log write = new Log ( );
+        public GetClean gc = new GetClean ( );
 
-
+        //Récupération des plats depuis la "cuisine" par le serveur
 		public void Server ( int table , int id_group )
         {
 			Thread.Sleep(10000);
@@ -30,7 +29,7 @@ namespace Controler
             while ( reader.Read ( ) )
             {
                 string plat = reader.GetString ( "id_plat" );
-                string message = "Apporte - " + plat + " au groupe" + id_group;
+                string message = "Apporte - " + plat + " au groupe n°" + id_group;
                 write.Logs ( "Serveur", message );
             }
             reader.Close ( );

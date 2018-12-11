@@ -11,13 +11,17 @@ namespace Controler
 {
     public class GetTable
     {
+        //Instanciation de l'objet
+        public Log write = new Log ( );
 
-        Log write = new Log ( );
+        //Attribution de la table selon la taille du groupe
         public int getTable ( int capacite )
         {
+            //Instanciation des variables
             int t = 0;
             string message = "";
 
+            //Attribution de la table
             string requete = "SELECT id_table FROM tables WHERE situation=0 AND capacite>=" + capacite;
             MySqlCommand cmd = new MySqlCommand ( requete, DBConnector.Instance.Connect );
             MySqlDataReader reader = cmd.ExecuteReader ( );

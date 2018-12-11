@@ -7,8 +7,11 @@ namespace Controler
 {
     public class SetAvailable
     {
-        Log write = new Log ( );
-        // ActionFull Action = new ActionFull ( );
+        //Instanciation deS objets
+        public Log write = new Log ( );
+        //ActionFull Action = new ActionFull ( );
+
+        //Actualise le status de la table
         public void setAvailable ( int table, int id_group )
         {
             string texte = "";
@@ -18,8 +21,11 @@ namespace Controler
 
             texte = "Le Maître de rang dresse à nouveau la table n°" + table;
             write.Logs ( texte, "elle est disponible" );
-            //Action.actionFull ( );
+            
             Console.ReadKey ( );
+
+            //Appel de la fonction suivante
+            //Action.actionFull ( );
         }
     }
 }

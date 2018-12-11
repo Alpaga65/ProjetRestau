@@ -8,7 +8,7 @@ namespace Model
 {
 	public class CommandeClient
 	{
-		public Log toto = new Log();
+	    //Ramdom plat client
 		public string commandeclient()
 		{
 			

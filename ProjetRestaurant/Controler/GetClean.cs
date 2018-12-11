@@ -6,8 +6,11 @@ namespace Controler
 {
     public class GetClean
     {
-        Log write = new Log ( );
-        SetAvailable sa = new SetAvailable ( );
+        //Instanciation des objets
+        public Log write = new Log ( );
+        public SetAvailable sa = new SetAvailable ( );
+
+        //Réinitialisation des tables utilisées
         public void getClean ( int table, int id_group )
         {
             Thread.Sleep ( 5000 );
@@ -22,8 +25,8 @@ namespace Controler
             MySqlCommand cmd = new MySqlCommand ( requete1, DBConnector.Instance.Connect );
             cmd.ExecuteNonQuery ( );
 
+            //Appel de la fonction suivante
             sa.setAvailable ( table,id_group );
-
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Controler
         private MySqlConnection connect;
         private static DBConnector instance;
 
+        //Création du singleton de connexion
         public static DBConnector Instance
         {
             get
@@ -21,6 +22,8 @@ namespace Controler
                 return instance;
             }
         }
+
+        //Création de la connexion
         private  DBConnector ( )
         {
             if ( connect == null )
@@ -29,7 +32,7 @@ namespace Controler
                 {
                     connect = new MySqlConnection ( "SERVER=178.62.4.64;DATABASE=Groupe1_Pau;UID=Groupe1Pau;PASSWORD=grp1" );
                     connect.Open ( );
-                    Console.WriteLine ( "sys : INSTANCIATION CONNEXION SQL" );
+                    Console.WriteLine ( "CONNEXION SQL = TRUE" );
                 }
                 catch ( MySql.Data.MySqlClient.MySqlException ex )
                 {
@@ -38,14 +41,17 @@ namespace Controler
                 }
             }
         }
+
+        //Ferme la connexion
         public void CloseConnection ( )
         {
             connect.Close ( );
         }
 
+        //Retoune la connexion
         public MySqlConnection Connect
         {
-            get { return connect;  }
+            get { return connect; }
         }
     }
 }

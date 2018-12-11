@@ -9,6 +9,8 @@ namespace Controler
 {
 	public class DBStart
 	{
+
+        //Nettoyage BDD
 		public static void dbStart()
 		{
 			string requete1 = "DELETE FROM Clients";

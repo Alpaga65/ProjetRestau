@@ -7,21 +7,17 @@ using System.Threading.Tasks;
 
 namespace Controler
 {
-    class LogStart
+    public class LogStart
     {
-
+        //Réinitialisation du fichier log en début de programme
         public void logStart ( )
         {
             string path = "C:/temp/DossierLog.txt";
             if (File.Exists (path ) )
             {
-
                 File.Delete ( path );
             }
-            using ( FileStream fs = File.Create ( path ) )
-            {
-
-            }
+            using ( FileStream fs = File.Create ( path ) ) {}            
         }
     }
 }
