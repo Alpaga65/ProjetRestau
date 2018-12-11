@@ -9,6 +9,8 @@ namespace Model
 	public class CommandeClient
 	{
 		public Log toto = new Log();
+
+		//Choix du plat pour un client
 		public string commandeclient()
 		{
 			

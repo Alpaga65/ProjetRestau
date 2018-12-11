@@ -18,6 +18,8 @@ namespace Controler
 		public GetCommand order = new GetCommand();
 		
 		Log log = new Log();
+
+		//Insertion des informations des clients dans la BDD
 		public void clientBdd(int groupType, int id_group, int numberClient)
 		{
         int id_table = gt.getTable ( numberClient );

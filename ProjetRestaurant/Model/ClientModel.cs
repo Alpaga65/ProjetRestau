@@ -10,7 +10,9 @@ namespace Model
 
 	public class ClientModel
 	{
-		 List<int> numberList = new List<int>();
+		List<int> numberList = new List<int>();
+
+		//Création complète d'un groupe
 		public  void CreationGroup(int number)
 		{
 			Log logs = new Log();
@@ -30,6 +32,7 @@ namespace Model
 
 		}
 
+		//Nombre de client aléatoire entre 1 et 10
 		public  int RandomClient()
 		{
 			Random randClient = new Random();
@@ -37,6 +40,7 @@ namespace Model
 			return numberClient;
 		}
 
+		//Identifiant du groupe arrivant au restaurant
 		public  int GroupClient(List<int> numberList)
 		{
 			int id_group = 1;
@@ -57,7 +61,7 @@ namespace Model
 		}
 
 
-
+		//Types de client au sein du groupe
 		public  string RandomType(int number)
 		{
 			String[] typepersonne = { "pressé", "normal", "cool" };
@@ -80,7 +84,7 @@ namespace Model
 
 
 
-
+		//Le type de client que le groupe va utiliser
 		public int GroupType(int number)
 		{
 			string listType = RandomType(number);
@@ -111,7 +115,7 @@ namespace Model
 		}
 
 
-
+		//Factory permettant d'avoir en string le type du groupe
 		public static class Factory
 		{
 
@@ -190,6 +194,7 @@ namespace Model
 			}
 		}
 
+		//Récupération du type du groupe
 		public void TextTypeGroupe(int number)
 		{
 			
