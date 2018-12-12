@@ -23,7 +23,7 @@ namespace Model
 			}
 			else
 			{
-				Console.WriteLine("Pas de groupe");
+				Console.WriteLine("Pas de groupe"); 
 			}
 			GroupType(number);
 			TextTypeGroupe(number);
