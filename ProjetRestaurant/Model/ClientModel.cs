@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-
 	public class ClientModel
 	{
-		 List<int> numberList = new List<int>();
+		public List<int> numberList = new List<int>();
+
+		//Création complète d'un groupe
 		public  void CreationGroup(int number)
 		{
 			Log logs = new Log();
@@ -19,17 +20,16 @@ namespace Model
 			{
 				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s) ";
 				logs.Logs("Client", idGroupName);
-			} 
+			}
 			else
 			{
 				Console.WriteLine("Pas de groupe");
 			}
 			GroupType(number);
 			TextTypeGroupe(number);
-
-
 		}
 
+		//Nombre de client aléatoire entre 1 et 10
 		public  int RandomClient()
 		{
 			Random randClient = new Random();
@@ -37,6 +37,7 @@ namespace Model
 			return numberClient;
 		}
 
+		//Identifiant du groupe arrivant au restaurant
 		public  int GroupClient(List<int> numberList)
 		{
 			int id_group = 1;
@@ -49,15 +50,12 @@ namespace Model
 				}
 
 			}
-
 			numberList.Add(id_group);
 
 			return id_group;
-
 		}
 
-
-
+		//Types de client au sein du groupe
 		public  string RandomType(int number)
 		{
 			String[] typepersonne = { "pressé", "normal", "cool" };
@@ -74,13 +72,9 @@ namespace Model
 			}
 			string groupeType = string.Join(",", randomList.ToArray());
 			return groupeType;
-
-
 		}
 
-
-
-
+		//Le type de client que le groupe va utiliser
 		public int GroupType(int number)
 		{
 			string listType = RandomType(number);
@@ -110,16 +104,13 @@ namespace Model
 			return groupType;
 		}
 
-
-
+		//Factory permettant d'avoir en string le type du groupe
 		public static class Factory
 		{
-
 			public static Type Get(int groupType, int number)
 			{
 				ClientModel clientModel = new ClientModel();
 				clientModel.GroupType(number);
-
 
 				switch (groupType)
 				{
@@ -129,9 +120,6 @@ namespace Model
 					case 4:
 					default: return new Aucun();
 				}
-
-
-
 			}
 		}
 
@@ -190,18 +178,11 @@ namespace Model
 			}
 		}
 
+		//Récupération du type du groupe
 		public void TextTypeGroupe(int number)
 		{
-			
 			Log logs = new Log();
 			var type = Factory.Get(GroupType(number), number);
-			
-
-
-			/*string text = "On va se baser sur le temps de la personne " + type.Title + "\n";
-			logs.Logs("Serveur", text);
-			Console.Write("\n");*/
-
 		}
 
 	}

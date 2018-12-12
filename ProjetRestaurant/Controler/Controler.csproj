@@ -69,7 +69,6 @@
     <Compile Include="SetAvailable.cs" />
     <Compile Include="GetClean.cs" />
     <Compile Include="SetTable.cs" />
-    <Compile Include="SetTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
