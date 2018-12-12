@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-	public class CommandeClient
-	{
-	    //Ramdom plat client
-		public string commandeclient()
-		{
-			
-		var random = new Random();
-			var list = new List<string> {"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
-			"Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur" };
-			int number = random.Next(list.Count);
-			string text = list[number];
-			return text;
-		} 
-	}	
+    public class CommandeClient
+    {
+        public Log toto = new Log ( );
+
+        //Choix du plat pour un client
+        public string commandeclient ( )
+        {
+
+            var random = new Random ( );
+            var list = new List<string> {"Pates bolognaise", "Pates carbonara", "Pates pesto", "Pates saumon", "Pates cèpes",
+            "Pizza margarita", "Pizza 4 fromages", "Pizza montagnarde", "Pizza kebab", "Pizza saveur" };
+            int number = random.Next ( list.Count );
+            string text = list[number];
+            return text;
+        }
+    }
 }
- 
+
