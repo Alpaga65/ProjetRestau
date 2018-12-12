@@ -23,7 +23,7 @@ namespace View
             DBStart.dbStart ( );
 			Thread.Sleep(1000);
 			action.actionFull();
-
+             
 		}
 	}
 }

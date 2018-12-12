@@ -20,7 +20,7 @@ namespace Controler
             int groupType = clientModel.GroupType ( numberClient );
             int id_group = clientModel.GroupClient ( numberList );
             clientbdd.clientBdd ( groupType, id_group, numberClient );
-
+             
         }
     }
 }

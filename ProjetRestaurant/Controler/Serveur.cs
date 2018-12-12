@@ -24,7 +24,7 @@ namespace Controler
 			Thread.Sleep(10000);
 			string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
             MySqlCommand cmd = new MySqlCommand ( requete, DBConnector.Instance.Connect );
-            MySqlDataReader reader = cmd.ExecuteReader ( );
+            MySqlDataReader reader = cmd.ExecuteReader ( ); 
 
             while ( reader.Read ( ) )
             {

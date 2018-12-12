@@ -14,7 +14,7 @@ namespace Controler
         //Instanciation de l'objet
         public Log write = new Log ( );
 
-        //Attribution de la table selon la taille du groupe
+        //Attribution de la table selon la taille du groupe 
         public int getTable ( int capacite )
         {
             //Instanciation des variables

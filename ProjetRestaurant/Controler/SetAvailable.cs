@@ -14,7 +14,7 @@ namespace Controler
         //Actualise le status de la table
         public void setAvailable ( int table, int id_group )
         {
-            string texte = "";
+            string texte = ""; 
             string requete = "UPDATE tables SET situation='0' WHERE id_groupe=" + id_group;
             MySqlCommand cmd = new MySqlCommand ( requete, DBConnector.Instance.Connect );
             MySqlDataReader reader = cmd.ExecuteReader ( );

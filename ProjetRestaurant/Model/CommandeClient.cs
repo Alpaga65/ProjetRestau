@@ -18,7 +18,7 @@ namespace Model
 			int number = random.Next(list.Count);
 			string text = list[number];
 			return text;
-		}
+		} 
 	}	
 }
  

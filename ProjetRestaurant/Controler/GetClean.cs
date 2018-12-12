@@ -13,7 +13,7 @@ namespace Controler
         //Réinitialisation des tables utilisées
         public void getClean ( int table, int id_group )
         {
-            Thread.Sleep ( 5000 );
+            Thread.Sleep ( 5000 ); 
             string texte = "Le groupe " + id_group;
             write.Logs ( texte, " a fini de manger " );
 

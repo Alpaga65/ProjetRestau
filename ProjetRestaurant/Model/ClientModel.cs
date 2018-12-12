@@ -19,7 +19,7 @@ namespace Model
 			{
 				string idGroupName = "Groupe " + id_group + " de " + number + " personne(s) ";
 				logs.Logs("Client", idGroupName);
-			}
+			} 
 			else
 			{
 				Console.WriteLine("Pas de groupe");

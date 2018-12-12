@@ -18,7 +18,7 @@ namespace Model
             StreamWriter w = File.AppendText("C:/temp/DossierLog.txt");
             w.WriteLine ( $"{Role} {":"} {Message}" );
             w.Close ( );
-
+             
             using (StreamReader reader = new StreamReader(@"C:/temp/DossierLog.txt"))
 			{
 				string content = reader.ReadToEnd();

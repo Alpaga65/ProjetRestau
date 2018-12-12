@@ -13,7 +13,7 @@ namespace Controler
         //Création du singleton de connexion
         public static DBConnector Instance
         {
-            get
+            get 
             {
                 if ( instance == null )
                 {

@@ -16,7 +16,7 @@ namespace Controler
         //Récupération de la commande des clients par groupe
         public void getCommand ( int id_table, int id_group, int numberClient )
         {
-            Thread.Sleep ( 5000 );
+            Thread.Sleep ( 5000 ); 
             string requete = "SELECT id_plat FROM Clients WHERE id_groupe=" + id_group;
             MySqlCommand cmd = new MySqlCommand ( requete, DBConnector.Instance.Connect );
             MySqlDataReader reader = cmd.ExecuteReader ( );

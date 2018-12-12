@@ -13,7 +13,7 @@ namespace Controler
 	public class ClientBdd
 	{
         //Instanciation des objets
-		public GetTable gt = new GetTable ( );
+		public GetTable gt = new GetTable ( ); 
         public SetTable st = new SetTable ( );
         public CommandeClient client = new CommandeClient( );
 		public GetCommand order = new GetCommand( );

@@ -10,7 +10,7 @@ namespace Controler
 	{
 		static void Main(string[] args)
 		{
-
+       
 		}
 	}
 }
